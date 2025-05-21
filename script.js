@@ -1,42 +1,58 @@
-// === Initialize AOS immediately so it's available globally ===
-AOS.init({
-  once: true,
-  duration: 800,
-});
-
-// === DOM Ready: Hide loader and show main content ===
 window.addEventListener("DOMContentLoaded", () => {
   const loader = document.getElementById("loader");
   const main = document.getElementById("main-content");
 
   setTimeout(() => {
     if (loader) loader.style.opacity = "0";
+
     setTimeout(() => {
       if (loader) loader.style.display = "none";
-      if (main) main.style.display = "block";
+      if (main) {
+        main.removeAttribute("hidden");
+        main.style.visibility = "visible";
+        main.style.opacity = "1";
+        main.style.transition = "opacity 0.5s ease";
 
-      // ✅ Re-initialize and refresh AOS after showing main
-      AOS.init({
-        once: true,
-        duration: 800,
-      });
-      AOS.refresh();
+        setTimeout(() => {
+          main.style.transition = "opacity 0.5s ease";
+          main.style.opacity = "1";
+
+          // ✅ Initialize AOS ONLY after content is visible
+          AOS.init({ once: true, duration: 800 });
+          AOS.refresh();
+          window.dispatchEvent(new Event('load'));
+
+        }, 100);
+      }
     }, 600);
   }, 2500);
 });
 
-// Enable smooth scroll only after content is visible
-setTimeout(() => {
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute("href"));
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth" });
+
+
+// Detect when sections exit the viewport
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      const el = entry.target;
+      if (!entry.isIntersecting) {
+        el.classList.add("fade-out");
+      } else {
+        el.classList.remove("fade-out");
       }
     });
-  });
-}, 3100); // after loader finishes
+  },
+  {
+    threshold: 0.25, // Start fading out when only 25% is left in view
+  }
+);
+
+// Observe each section
+document.querySelectorAll("section").forEach((section) => {
+  observer.observe(section);
+});
+
+
 
 
 
@@ -98,9 +114,28 @@ document.addEventListener("mousemove", (e) => {
 
 // === Custom Cursor Follow ===
 const cursor = document.getElementById("custom-cursor");
+let mouseMoved = false;
 document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
+});
+document.addEventListener("mousemove", (e) => {
+  if (!mouseMoved) {
+    mouseMoved = true;
+
+    // Show custom cursor
+    if (cursor) cursor.style.display = "block";
+
+    // Fade in particles
+    const particles = document.getElementById("particles-js");
+    if (particles) particles.style.opacity = "1";
+  }
+
+  // Move cursor
+  if (cursor) {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+  }
 });
 
 // === Allow Autoplay After Click ===
