@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Risers is a gaming community built by players, for players. Join us for fun, friendship, and epic adventures!">
+  <meta name="keywords" content="Risers, Gaming, Discord, Minecraft, SMP, Community">
+  <title>Risers Community</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="splash-logo">
+      <img src="assets/logo.png" alt="Risers Logo" />
+      <h2 class="shiny-text">Welcome to Risers</h2>
+      <div class="loading-bar"><div class="bar"></div></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main-content" style="display: none;">
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+
+    <!-- Header -->
+    <header>
+      <h1 class="logo">Risers</h1>
+      <nav class="navbar">
+        <div class="nav-left">
+          <div class="hamburger" id="hamburger">&#9776;</div>
+          <ul class="nav-links" id="nav-links">
+              <li><a href="#hero">HOME</a></li>
+              <li><a href="#about">ABOUT</a></li>
+              <li><a href="#games">GAMES</a></li>
+              <li><a href="#smp">SMP</a></li>
+              <li><a href="#team">TEAM</a></li>
+              <li><a href="#discord">DISCORD</a></li>
+              <li><a href="#portfolio">PORTFOLIO</a></li>
+          </ul>
+        </div>
+        <img id="theme-icon" src="assets/sun.png" alt="Theme Toggle" class="theme-toggle"/>
+      </nav>
+    </header>
+
+    <!-- Music Toggle -->
+    <div class="music-visualizer-container">
+      <button id="music-toggle" class="music-toggle">
+        <img id="music-icon" src="assets/speaker-on.png" alt="Toggle Music"/>
+      </button>
+      <div class="fake-visualizer" id="fake-visualizer">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+
+    <audio id="bg-music" src="assets/bg-music.mp3" loop></audio>
+
+    <!-- Hero Section -->
+     <section id="hero" class="hero">
+        <img src="assets/logo.png" alt="Risers Logo" class="logo-img"/>
+       <h2>Risers</h2>
+       <p><span class="typed-text" id="typed-text"></span><span class="cursor">|</span></p>
+       <a href="https://discord.gg/PMMcpws6EV" class="cta-button">Join Our Discord</a>
+      </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="section" data-aos="fade-up">
+      <h2>About Us</h2>
+      <p>Welcome to Risers – a passionate gaming community built by players, for players.</p>
+      <p>We are a home for those who love <span class="highlight">creativity, adventure</span>, and real <span class="highlight">friendship</span>.</p>
+      <p>It is not just a name but <span class="highlight">a World of a Family</span>.</p>
+    </section>
+
+    <!-- Games Section -->
+    <section id="games" class="section" data-aos="zoom-in">
+      <h2>Games We Enjoy!</h2>
+      <div class="game-cards">
+        <div class="game-card">
+          <img src="assets/minecraft.png" alt="Minecraft"/>
+          <p>Minecraft</p>
+          <p>This game has taught many things</p>
+          <p>Creativity is endless</p>
+        </div>
+        <div class="game-card">
+          <img src="assets/roblox.png" alt="Roblox"/>
+          <p>Roblox</p>
+          <p>This was the beginning of our friendship</p>
+        </div>  
+      </div>
+      <div>
+        <a href="https://discord.gg/PMMcpws6EV" class="cta-button">Join Us to Play !</a>
+      </div>
+    </section>
+
+    <!-- SMP Section -->
+    <section id="smp" class="section" data-aos="zoom-in">
+      <h2>Risers SMP</h2>
+      <p>Our SMP is where the real fun happens! A survival Minecraft server with events, factions, and chill vibes.</p>
+      <a href="https://discord.gg/PMMcpws6EV" class="cta-button">Join Our SMP</a>
+    </section>
+
+
+    <!-- AOS Library -->
+     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+     <script>
+       AOS.init();
+     </script>
+
+
+    <!-- Team Section -->
+    <section id="team" class="section" data-aos="zoom-in">
+      <h2>Meet the Risers</h2>
+      <div class="team-grid">
+        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+  <div class="team-card-inner">
+    <div class="team-card-front">
+      <img src="assets/avatar1.png" alt="DJ" />
+      <h3>DJ</h3>
+      <p>The Greatest of All</p>
+    </div>
+    <div class="team-card-back">
+      <img src="assets/avatar1.png" alt="DJ" />
+      <p>The Founder of Risers</p>
+    </div>
+  </div>
+</div>
+        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+  <div class="team-card-inner">
+    <div class="team-card-front">
+      <img src="assets/avatar2.png" alt="Dark Yoddha" />
+      <h3>Dark Yoddha</h3>
+      <p>The Hier</p>
+    </div>
+    <div class="team-card-back">
+      <img src="assets/avatar2.png" alt="Dark Yoddha" />
+      <p>The New Brilliant King</p>
+    </div>
+  </div>
+</div>
+        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+  <div class="team-card-inner">
+    <div class="team-card-front">
+      <img src="assets/avatar3.png" alt="Venom" />
+      <h3>Venom</h3>
+      <p>The Spartan</p>
+    </div>
+    <div class="team-card-back">
+      <img src="assets/avatar3.png" alt="Venom" />
+      <p>The Best PvPier of Risers</p>
+    </div>
+  </div>
+</div>
+        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+  <div class="team-card-inner">
+    <div class="team-card-front">
+      <img src="assets/avatar4.png" alt="Meetu" />
+      <h3>Meetu</h3>
+      <p>The Effecient</p>
+    </div>
+    <div class="team-card-back">
+      <img src="assets/avatar4.png" alt="Meetu" />
+      <p>The Hacker Mind</p>
+    </div>
+  </div>
+</div>
+        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+  <div class="team-card-inner">
+    <div class="team-card-front">
+      <img src="assets/avatar5.png" alt="Minato" />
+      <h3>Minato</h3>
+      <p>The Rager</p>
+    </div>
+    <div class="team-card-back">
+      <img src="assets/avatar5.png" alt="Minato" />
+      <p>The F.P.S Personality</p>
+    </div>
+  </div>
+</div>
+        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+  <div class="team-card-inner">
+    <div class="team-card-front">
+      <img src="assets/avatar6.png" alt="Piyush" />
+      <h3>Piyush</h3>
+      <p>The Quite Soul</p>
+    </div>
+    <div class="team-card-back">
+      <img src="assets/avatar6.png" alt="Piyush" />
+      <p>The Outstanding Minded</p>
+    </div>
+  </div>
+</div>
+        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+  <div class="team-card-inner">
+    <div class="team-card-front">
+      <img src="assets/avatar7.png" alt="Sneaky" />
+      <h3>Sneaky</h3>
+      <p>The Start</p>
+    </div>
+    <div class="team-card-back">
+      <img src="assets/avatar7.png" alt="Sneaky" />
+      <p>The one who started the friendship</p>
+    </div>
+  </div>
+</div>
+      </div>
+    </section>
+
+    <!-- Discord Section -->
+    <section id="discord" class="section" data-aos="fade-up">
+      <h2>Join the Conversation</h2>
+      <iframe src="https://discord.com/widget?id=1288440955229179904&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+    </section>
+    
+    <!-- Portfolio -->
+    <section id="portfolio" class="section" data-aos="fade-up">
+      <h2>PortFolio</h2>
+      
+    </section>
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="scroll-top">Up</button>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <h3>Risers</h3>
+        <p>© 2025 Risers Community. All rights reserved.</p>
+        <div class="social-icons">
+          <a href="https://discord.gg/PMMcpws6EV" target="_blank"><img src="assets/discord-icon.png" alt="Discord"></a>
+          <a href="https://youtube.com/@RisersOfficials" target="_blank"><img src="assets/youtube-icon.png" alt="YouTube"></a>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

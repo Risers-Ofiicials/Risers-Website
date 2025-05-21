@@ -1,0 +1,152 @@
+// === Initialize AOS immediately so it's available globally ===
+AOS.init({
+  once: true,
+  duration: 800,
+});
+
+// === DOM Ready: Hide loader and show main content ===
+window.addEventListener("DOMContentLoaded", () => {
+  const loader = document.getElementById("loader");
+  const main = document.getElementById("main-content");
+
+  setTimeout(() => {
+    if (loader) loader.style.opacity = "0";
+    setTimeout(() => {
+      if (loader) loader.style.display = "none";
+      if (main) main.style.display = "block";
+
+      // ✅ Re-initialize and refresh AOS after showing main
+      AOS.init({
+        once: true,
+        duration: 800,
+      });
+      AOS.refresh();
+    }, 600);
+  }, 2500);
+});
+
+// Enable smooth scroll only after content is visible
+setTimeout(() => {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+}, 3100); // after loader finishes
+
+
+
+// === Music Toggle ===
+const bgMusic = document.getElementById("bg-music");
+const musicToggle = document.getElementById("music-toggle");
+const musicIcon = document.getElementById("music-icon");
+let musicOn = true;
+
+musicToggle.addEventListener("click", () => {
+  if (musicOn) {
+    bgMusic.volume = 1;
+    const fadeOut = setInterval(() => {
+      if (bgMusic.volume > 0.1) {
+        bgMusic.volume -= 0.1;
+      } else {
+        bgMusic.pause();
+        clearInterval(fadeOut);
+      }
+    }, 100);
+    musicIcon.src = "assets/speaker-off.png";
+  } else {
+    bgMusic.volume = 0;
+    bgMusic.play().catch(() => {});
+    const fadeIn = setInterval(() => {
+      if (bgMusic.volume < 0.9) {
+        bgMusic.volume += 0.1;
+      } else {
+        clearInterval(fadeIn);
+      }
+    }, 100);
+    musicIcon.src = "assets/speaker-on.png";
+  }
+  musicOn = !musicOn;
+});
+
+// === Theme Toggle ===
+const themeIcon = document.getElementById("theme-icon");
+let isDark = true;
+
+themeIcon.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+  themeIcon.src = isDark ? "assets/moon.png" : "assets/sun.png";
+  isDark = !isDark;
+});
+
+// === Mouse Trail Effect ===
+document.addEventListener("mousemove", (e) => {
+  const trail = document.createElement("div");
+  trail.className = "mouse-trail";
+  trail.style.left = `${e.clientX}px`;
+  trail.style.top = `${e.clientY}px`;
+  document.body.appendChild(trail);
+
+  setTimeout(() => {
+    trail.remove();
+  }, 600);
+});
+
+// === Custom Cursor Follow ===
+const cursor = document.getElementById("custom-cursor");
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+// === Allow Autoplay After Click ===
+document.addEventListener("click", () => {
+  bgMusic.play().catch(() => {});
+}, { once: true });
+
+// === Load ParticlesJS ===
+particlesJS.load("particles-js", "particles-config.js", function () {
+  console.log("Particles loaded.");
+});
+
+// === Hamburger Menu ===
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
+hamburger.addEventListener("click", () => {
+  navLinks.classList.toggle("show");
+});
+
+// === Typing Animation ===
+const typedTextElement = document.getElementById("typed-text");
+const phrases = ["We Rise Above All", "Welcome to the Risers...", "Join the Adventure!", "Conquer. Create. Connect."];
+let phraseIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+let typingSpeed = 100;
+
+function type() {
+  const currentPhrase = phrases[phraseIndex];
+  const currentText = currentPhrase.substring(0, charIndex);
+  typedTextElement.textContent = currentText;
+
+  if (!isDeleting && charIndex < currentPhrase.length) {
+    charIndex++;
+    typingSpeed = 100;
+  } else if (isDeleting && charIndex > 0) {
+    charIndex--;
+    typingSpeed = 50;
+  } else {
+    isDeleting = !isDeleting;
+    typingSpeed = isDeleting ? 1000 : 500;
+    if (!isDeleting) {
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+  }
+
+  setTimeout(type, typingSpeed);
+}
+type();

@@ -1,0 +1,826 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Audiowide', 'Orbitron', sans-serif;
+  background-color: #000000;
+  color: #fff;
+  cursor: none;
+  overflow-x: hidden;
+  .section, .navbar a, .cta-button, .logo, header, .music-toggle {
+  transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 0;
+}
+
+/* === Loader === */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  color: gold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 10000;
+}
+
+/* === Section === */
+
+.section {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+[data-aos].aos-animate {
+  opacity: 1 !important;
+
+}
+
+
+/* === Header === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #000;
+  border-bottom: 2px solid gold;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: gold;
+}
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: gold;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar a:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.theme-toggle { 
+  width: 24px;
+  height: 24px;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+body.light-theme .theme-toggle {
+  filter: invert(100%);
+}
+
+
+/* === Particles Layer === */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;  /* was -1 */
+  top: 0;
+  left: 0;
+}
+
+
+
+
+/* === Music Toggle === */
+.music-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: gold;
+  border-radius: 12px;
+  padding: 0.6rem;
+  border: none;
+  z-index: 20;
+  box-shadow: 0 0 10px gold;
+  cursor: pointer;
+}
+
+#music-icon {
+  width: 24px;
+}
+
+/* === Hero Section === */
+#hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background-image: url("assets/hero-bg.jpg"); /* Add a suitable image in assets */
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+
+.logo-img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  color: gold;
+  margin-bottom: 1.5rem;
+}
+
+#hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+  z-index: -1;
+}
+
+.cta-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0));
+  transform: skewX(-20deg);
+  transition: left 0.4s ease;
+}
+
+.cta-button:hover::after {
+  left: 130%;
+}
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+
+.cta-button:hover {
+  background: #fff100;
+  box-shadow: 0 0 18px #fff100, 0 0 28px #fff100;
+  color: black;
+}
+
+/* === Sections === */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2rem;
+  color: gold;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px gold, 0 0 20px gold, 0 0 40px #fff200;
+  transition: text-shadow 0.3s ease;
+}
+
+.section h2:hover {
+  text-shadow: 0 0 20px #fff200, 0 0 40px gold, 0 0 60px white;
+}
+
+
+.section p {
+  max-width: 800px;
+  margin: 0 auto 1rem auto;
+  font-size: 1.1rem;
+}
+
+.highlight {
+  color: gold;
+  font-weight: bold;
+}
+
+/* === Games Section === */
+.game-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.game-card {
+  background: #1b1b1b;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #000;
+  transition: transform 0.3s ease;
+}
+
+.game-card img {
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.5rem;
+}
+
+.game-card:hover {
+  transform: scale(1.1);
+}
+
+/* === Team Section === */
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.team-card {
+  width: 200px;
+  perspective: 1000px;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px gold, 0 0 45px rgba(255, 215, 0, 0.5);
+}
+
+.team-card-inner {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.team-card:hover .team-card-inner {
+  transform: rotateY(180deg);
+}
+
+.team-card-front,
+.team-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 1rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.team-card-front {
+  background: #1a1a1a;
+  color: white;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.team-card-back {
+  background: #332f18;
+  color: gold;
+  transform: rotateY(180deg);
+  font-weight: bold;
+  box-shadow: inset 0 0 10px rgb(255, 51, 0);
+}
+
+.team-card-front img,
+.team-card-back img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid gold;
+  box-shadow: 0 0 10px gold;
+}
+
+
+/* === Scroll Top Button === */
+.scroll-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background: gold;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px gold;
+  z-index: 10;
+}
+
+/* === Discord Widget === */
+#discord iframe {
+  margin-top: 2rem;
+  border-radius: 8px;
+}
+
+/* === Custom Cursor === */
+#custom-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background: gold;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.mouse-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #fcd303;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px #fcd303;
+}
+
+/* === Light Theme (for toggle) === */
+body.light-theme header {
+  background: #eee;
+  border-bottom: 2px solid #ffd700;
+}
+
+body.light-theme .logo,
+body.light-theme .navbar a,
+body.light-theme .highlight,
+body.light-theme .section h2 {
+  color: #222;
+}
+
+body.light-theme .cta-button {
+  background: #000;
+  color: #fff;
+  box-shadow: 0 0 10px #000;
+}
+
+body.light-theme .music-toggle {
+  background: #8f8983;
+  box-shadow: 0 0 10px #888;
+}
+
+body.light-theme .team-card {
+  background-image: linear-gradient(#f0f0f0, #f0f0f0),
+    linear-gradient(45deg, #ffd700, #fffb00, orange);
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: gold;
+  padding: 0.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+}
+
+/* === Responsive Media Query === */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .game-cards,
+  .team-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+}
+.mouse-trail {
+  opacity: 0.8;
+  animation: fadeOut 0.2s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+.mouse-trail {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: #fcd303;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px #fcd303;
+  opacity: 0.8;
+  animation: fadeOut 0.6s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
+#hero {
+  position: relative;
+  text-align: center;
+  padding: 6rem 2rem;
+  background-image: url("assets/hero-bg.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+/* Remove ::after dark overlay completely — it's unnecessary with particles */
+#hero::after {
+  display: none;
+}
+
+/* Optional: keep just the animated glow effect */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 0, 0.1), transparent 70%);
+  animation: pulseBackground 4s infinite ease-in-out;
+  z-index: 1;
+}
+
+
+@keyframes pulseBackground {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+.typed-text {
+  color: gold;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.cursor {
+  display: inline-block;
+  color: gold;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.music-visualizer-container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 20;
+}
+
+.fake-visualizer {
+  display: flex;
+  gap: 2px;
+  height: 20px;
+}
+
+.fake-visualizer span {
+  width: 3px;
+  height: 100%;
+  background: rgb(255, 0, 0);
+  display: block;
+  animation: pulseBar 1s infinite;
+}
+
+.fake-visualizer span:nth-child(1) {
+  animation-delay: 0s;
+}
+.fake-visualizer span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.fake-visualizer span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.fake-visualizer span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.fake-visualizer span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulseBar {
+  0%, 100% {
+    height: 20%;
+  }
+  50% {
+    height: 100%;
+  }
+}
+.site-footer {
+  background: #000;
+  color: gold;
+  padding: 2rem 1rem;
+  text-align: center;
+  border-top: 2px solid gold;
+  box-shadow: 0 -4px 10px rgba(255, 215, 0, 0.2);
+  z-index: 5;
+  position: relative;
+}
+
+.site-footer h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 8px gold;
+}
+
+.site-footer p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 4px rgb(0, 238, 255));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #e5ff00);
+}
+#loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  color: gold;
+  font-family: 'Audiowide', sans-serif;
+}
+
+.splash-logo {
+  text-align: center;
+  animation: fadeInUp 1s ease-out;
+}
+
+.splash-logo img {
+  width: 120px;
+  margin-bottom: 1rem;
+}
+
+.splash-logo h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px gold;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 8px;
+  border: 1px solid gold;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.loading-bar .bar {
+  width: 0%;
+  height: 100%;
+  background: gold;
+  animation: loadBar 2s forwards;
+}
+
+@keyframes loadBar {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.shiny-text {
+  position: relative;
+  display: inline-block;
+  color: gold;
+  overflow: hidden;
+}
+
+.shiny-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.2), rgba(255,255,255,0.6), rgba(255,255,255,0.2));
+  transform: skewX(-20deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+/* === Fix for invisible hero logo === */
+.logo-img {
+  display: block;
+  max-width: 150px;
+  height: auto;
+  margin: 0 auto 1rem;
+  z-index: 2;
+  position: relative;
+  opacity: 1 !important;
+}
+
+/* === Fix for invisible CTA button === */
+.cta-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: gold;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gold;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  opacity: 1 !important;
+}
+/* === Flip Card Structure === */
+.team-card {
+  perspective: 1000px;
+   transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px gold, 0 0 45px rgba(255, 215, 0, 0.5);
+}
+
+.team-card-inner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.team-card:hover .team-card-inner {
+  transform: rotateY(180deg);
+}
+
+.team-card-front, .team-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.team-card-front {
+  background: #1a1a1a;
+  color: white;
+  z-index: 2;
+}
+
+.team-card-back {
+  background: #332f18;
+  color: gold;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;           /* ✅ Stack vertically */
+  align-items: center;              /* ✅ Center horizontally */
+  justify-content: center;          /* ✅ Center vertically */
+  font-weight: bold;
+  box-shadow: inset 0 0 10px rgb(255, 51, 0);
+  padding: 1rem;
+  gap: 0.5rem;                      /* ✅ Add spacing between image and text */
+}
