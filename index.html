@@ -7,7 +7,8 @@
   <meta name="keywords" content="Risers, Gaming, Discord, Minecraft, SMP, Community">
   <title>Risers Community</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -22,13 +23,10 @@
   </div>
 
   <!-- Main Content -->
-  <div id="main-content" style="display: none;">
+    <div id="main-content" style="visibility: hidden; opacity: 0;">
 
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
 
-    <!-- Custom Cursor -->
-    <div id="custom-cursor"></div>
+
 
     <!-- Header -->
     <header>
@@ -49,6 +47,12 @@
         <img id="theme-icon" src="assets/sun.png" alt="Theme Toggle" class="theme-toggle"/>
       </nav>
     </header>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Custom Cursor -->
+    <div id="custom-cursor"></div>
+    <div id="particles-js"></div>
 
     <!-- Music Toggle -->
     <div class="music-visualizer-container">
@@ -117,102 +121,127 @@
 
 
     <!-- Team Section -->
-    <section id="team" class="section" data-aos="zoom-in">
-      <h2>Meet the Risers</h2>
-      <div class="team-grid">
-        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
-  <div class="team-card-inner">
-    <div class="team-card-front">
-      <img src="assets/avatar1.png" alt="DJ" />
-      <h3>DJ</h3>
-      <p>The Greatest of All</p>
-    </div>
-    <div class="team-card-back">
-      <img src="assets/avatar1.png" alt="DJ" />
-      <p>The Founder of Risers</p>
-    </div>
-  </div>
-</div>
-        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
-  <div class="team-card-inner">
-    <div class="team-card-front">
-      <img src="assets/avatar2.png" alt="Dark Yoddha" />
-      <h3>Dark Yoddha</h3>
-      <p>The Hier</p>
-    </div>
-    <div class="team-card-back">
-      <img src="assets/avatar2.png" alt="Dark Yoddha" />
-      <p>The New Brilliant King</p>
-    </div>
-  </div>
-</div>
-        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
-  <div class="team-card-inner">
-    <div class="team-card-front">
-      <img src="assets/avatar3.png" alt="Venom" />
-      <h3>Venom</h3>
-      <p>The Spartan</p>
-    </div>
-    <div class="team-card-back">
-      <img src="assets/avatar3.png" alt="Venom" />
-      <p>The Best PvPier of Risers</p>
-    </div>
-  </div>
-</div>
-        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
-  <div class="team-card-inner">
-    <div class="team-card-front">
-      <img src="assets/avatar4.png" alt="Meetu" />
-      <h3>Meetu</h3>
-      <p>The Effecient</p>
-    </div>
-    <div class="team-card-back">
-      <img src="assets/avatar4.png" alt="Meetu" />
-      <p>The Hacker Mind</p>
-    </div>
-  </div>
-</div>
-        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
-  <div class="team-card-inner">
-    <div class="team-card-front">
-      <img src="assets/avatar5.png" alt="Minato" />
-      <h3>Minato</h3>
-      <p>The Rager</p>
-    </div>
-    <div class="team-card-back">
-      <img src="assets/avatar5.png" alt="Minato" />
-      <p>The F.P.S Personality</p>
-    </div>
-  </div>
-</div>
-        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
-  <div class="team-card-inner">
-    <div class="team-card-front">
-      <img src="assets/avatar6.png" alt="Piyush" />
-      <h3>Piyush</h3>
-      <p>The Quite Soul</p>
-    </div>
-    <div class="team-card-back">
-      <img src="assets/avatar6.png" alt="Piyush" />
-      <p>The Outstanding Minded</p>
-    </div>
-  </div>
-</div>
-        <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
-  <div class="team-card-inner">
-    <div class="team-card-front">
-      <img src="assets/avatar7.png" alt="Sneaky" />
-      <h3>Sneaky</h3>
-      <p>The Start</p>
-    </div>
-    <div class="team-card-back">
-      <img src="assets/avatar7.png" alt="Sneaky" />
-      <p>The one who started the friendship</p>
-    </div>
-  </div>
-</div>
+<section id="team" class="section" data-aos="zoom-in">
+  <h2>Meet the Risers</h2>
+  <div class="team-section-box">
+    <div class="team-grid">
+    
+      <div class="team-card" data-aos="zoom-in" data-aos-delay="100">
+        <div class="team-card-inner">
+          <div class="team-card-front">
+            <img src="assets/avatar1.png" alt="DJ" />
+            <h3>DJ</h3>
+            <p>The Greatest of All</p>
+          </div>
+          <div class="team-card-back">
+            <img src="assets/avatar1.png" alt="DJ" />
+            <p>The Founder of Risers</p>
+          </div>
+        </div>
       </div>
-    </section>
+
+      <div class="team-card" data-aos="zoom-in" data-aos-delay="200">
+        <div class="team-card-inner">
+          <div class="team-card-front">
+            <img src="assets/avatar2.png" alt="Dark Yoddha" />
+            <h3>Dark Yoddha</h3>
+            <p>The Hier</p>
+          </div>
+          <div class="team-card-back">
+            <img src="assets/avatar2.png" alt="Dark Yoddha" />
+            <p>The New Brilliant King</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card" data-aos="zoom-in" data-aos-delay="300">
+        <div class="team-card-inner">
+          <div class="team-card-front">
+            <img src="assets/avatar3.png" alt="Venom" />
+            <h3>Venom</h3>
+            <p>The Spartan</p>
+          </div>
+          <div class="team-card-back">
+            <img src="assets/avatar3.png" alt="Venom" />
+            <p>The Best PvPier of Risers</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card" data-aos="zoom-in" data-aos-delay="400">
+        <div class="team-card-inner">
+          <div class="team-card-front">
+            <img src="assets/avatar4.png" alt="Meetu" />
+            <h3>Meetu</h3>
+            <p>The Efficient</p>
+          </div>
+          <div class="team-card-back">
+            <img src="assets/avatar4.png" alt="Meetu" />
+            <p>The Hacker Mind</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card" data-aos="zoom-in" data-aos-delay="500">
+        <div class="team-card-inner">
+          <div class="team-card-front">
+            <img src="assets/avatar5.png" alt="Minato" />
+            <h3>Minato</h3>
+            <p>The Rager</p>
+          </div>
+          <div class="team-card-back">
+            <img src="assets/avatar5.png" alt="Minato" />
+            <p>The F.P.S Personality</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card" data-aos="zoom-in" data-aos-delay="600">
+        <div class="team-card-inner">
+          <div class="team-card-front">
+            <img src="assets/avatar6.png" alt="Piyush" />
+            <h3>Piyush</h3>
+            <p>The Quiet Soul</p>
+          </div>
+          <div class="team-card-back">
+            <img src="assets/avatar6.png" alt="Piyush" />
+            <p>The Outstanding Minded</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card" data-aos="zoom-in" data-aos-delay="700">
+        <div class="team-card-inner">
+          <div class="team-card-front">
+            <img src="assets/avatar7.png" alt="Sneaky" />
+            <h3>Sneaky</h3>
+            <p>The Start</p>
+          </div>
+          <div class="team-card-back">
+            <img src="assets/avatar7.png" alt="Sneaky" />
+            <p>The one who started the friendship</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card" data-aos="zoom-in" data-aos-delay="700">
+        <div class="team-card-inner">
+          <div class="team-card-front">
+            <img src="assets/logo.gif" alt="Risers" />
+            <h3>The Risers</h3>
+            <p>The World itself</p>
+          </div>
+          <div class="team-card-back">
+            <img src="assets/logo.gif" alt="Sneaky" />
+            <p>The World</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
     <!-- Discord Section -->
     <section id="discord" class="section" data-aos="fade-up">
@@ -222,7 +251,18 @@
     
     <!-- Portfolio -->
     <section id="portfolio" class="section" data-aos="fade-up">
-      <h2>PortFolio</h2>
+  <h2>Our Journey</h2>
+  <p class="portfolio-text">
+    The foundation of <strong>Risers</strong> began when the Founder crossed paths with <strong>Sneaky</strong> during a casual session of <em>Blox Fruits</em> on Roblox. Their friendship quickly grew, and Sneaky introduced the Founder to five key individuals: <strong>Venom</strong>, <strong>Meetu</strong>, <strong>Piyush</strong>, <strong>Minato</strong>, and later, <strong>Dark Yoddha</strong>, who joined after the community had officially formed.
+  </p>
+  <p class="portfolio-text">
+    Over time, the group transitioned to <strong>Minecraft</strong>, specifically the Apple MC server. However, internal tensions soon arose among the members. Recognizing the importance of unity, the Founder created a peaceful Discord group — one of the first to join was Piyush. The group became a neutral ground, focused on friendship, collaboration, and rebuilding bonds.
+  </p>
+  <p class="portfolio-text">
+    That initiative evolved into what we now proudly call <strong>Risers</strong>. From humble beginnings, the group has grown into a full-fledged community with its own Discord server, dedicated SMP, and now, this website — a testament to our journey, resilience, and shared passion for gaming.
+  </p>
+</section>
+
       
     </section>
     <!-- Scroll to Top Button -->
@@ -244,8 +284,9 @@
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script src="script.js"></script>
+  
+
 
 </body>
 </html>
